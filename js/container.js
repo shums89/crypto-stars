@@ -1,6 +1,16 @@
 import { renderContractors } from './contractors.js';
 import { getContractors } from './data.js';
-import { nav } from './elems.js';
+import { containerNoResult, containerUsers, nav } from './elems.js';
+
+const hideNoResult = () => {
+  containerUsers.querySelector('.users-list__table-body').style = '';
+  containerNoResult.style.display = 'none';
+};
+
+const showNoResult = () => {
+  containerUsers.querySelector('.users-list__table-body').style.display = 'none';
+  containerNoResult.style = '';
+};
 
 const filteredTabs = () => {
   const actionBtn = nav.querySelector('.tabs--toggle-buy-sell').querySelector('.is-active');
@@ -9,7 +19,7 @@ const filteredTabs = () => {
   let filteredData = getContractors().slice();
 
   if (checkingVerifiedUsers.checked) {
-    filteredData = filteredData.filter((el) => el.isVerified === true);
+    filteredData = filteredData.filter((el) => el.isVerified);
   }
 
   if (actionBtn.matches('.btn-buy')) {
@@ -18,7 +28,12 @@ const filteredTabs = () => {
     filteredData = filteredData.filter((el) => el.status === 'buyer');
   }
 
-  renderContractors(filteredData);
+  if (!filteredData.length) {
+    showNoResult();
+  } else {
+    hideNoResult();
+    renderContractors(filteredData);
+  }
 };
 
 const toggleContainer = (evt) => {
