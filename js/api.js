@@ -1,7 +1,7 @@
-import { URL_GET_CONTRACTORS, URL_POST } from './consts.js';
+import { URL_POST } from './consts.js';
 
-const getData = (onSuccess, onFail) => {
-  fetch(URL_GET_CONTRACTORS)
+const getData = (url, onSuccess, onFail) => {
+  fetch(url)
     .then((response) => response.json())
     .then((contractors) => {
       onSuccess(contractors);

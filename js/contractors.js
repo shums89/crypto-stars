@@ -8,7 +8,7 @@ export const createRowElement = (contractor) => {
     paymentMethods =
       contractor.paymentMethods
         .slice().map((el) => `<li class="users-list__badges-item badge">${el.provider}</li>`)
-        .join()
+        .join('')
       || '';
   }
 
