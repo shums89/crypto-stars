@@ -1,19 +1,18 @@
-let USER = [];
-let CONTRACTORS = [];
-
 const saveUserData = (data, cb) => {
-  USER = data;
-  cb(data);
+  sessionStorage.user = JSON.stringify(data);
+
+  cb(JSON.parse(sessionStorage.user));
 };
 
-const getUser = () => USER;
+const getUser = () => JSON.parse(sessionStorage.user);
 
 const saveContractorsData = (data, cb) => {
-  CONTRACTORS = data;
-  cb(data);
+  sessionStorage.contractors = JSON.stringify(data);
+
+  cb(JSON.parse(sessionStorage.contractors));
 };
 
-const getContractors = () => CONTRACTORS;
+const getContractors = () => JSON.parse(sessionStorage.contractors);
 
 export {
   saveUserData,

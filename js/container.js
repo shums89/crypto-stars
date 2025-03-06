@@ -1,12 +1,12 @@
 import { renderContractors } from './contractors.js';
+import { getContractors } from './data.js';
 import { nav } from './elems.js';
-
-let contractors = [];
 
 const filteredTabs = () => {
   const actionBtn = nav.querySelector('.tabs--toggle-buy-sell').querySelector('.is-active');
   const checkingVerifiedUsers = nav.querySelector('#checked-users');
-  let filteredData = contractors.slice();
+
+  let filteredData = getContractors().slice();
 
   if (checkingVerifiedUsers.checked) {
     filteredData = filteredData.filter((el) => el.isVerified === true);
@@ -43,10 +43,13 @@ const toggleContainer = (evt) => {
   filteredTabs();
 };
 
-export const renderContainer = (data) => {
-  contractors = data;
+const renderContainer = () => {
   filteredTabs();
 
   nav.addEventListener('click', toggleContainer);
 };
 
+export {
+  filteredTabs,
+  renderContainer,
+};
