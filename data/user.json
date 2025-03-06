@@ -1,0 +1,28 @@
+{
+  "userName": "Алексей",
+  "balances": [
+    {
+      "currency": "RUB",
+      "amount": 4305618
+    },
+    {
+      "currency": "KEKS",
+      "amount": 75.98
+    }
+  ],
+  "wallet": {
+    "currency": "KEKS",
+    "address": "a6dsqeaz1w7cokxcz4jg4rscm0mmwymfeanxoxg7"
+  },
+  "paymentMethods": [
+    {
+      "currency": "RUB",
+      "provider": "Sberbank",
+      "accountNumber": "0000 0000 0000 7578"
+    },
+    {
+      "currency": "RUB",
+      "provider": "Cash in person"
+    }
+  ]
+}

@@ -6,8 +6,7 @@ const getData = (url, onSuccess, onFail) => {
     .then((contractors) => {
       onSuccess(contractors);
     })
-    .catch((error) => {
-      console.log(error);
+    .catch(() => {
       onFail();
     });
 };

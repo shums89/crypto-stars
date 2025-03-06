@@ -1,0 +1,631 @@
+[
+  {
+    "id": "PS1Mp_jpbMcTBPJRtw8SL",
+    "balance": {
+      "currency": "RUB",
+      "amount": 676350
+    },
+    "exchangeRate": 4967.53,
+    "isVerified": false,
+    "status": "buyer",
+    "userName": "Борис",
+    "wallet": {
+      "currency": "KEKS",
+      "address": "vths84q7avll7ti0krrlz0r8lpdhu0fi3lftpok3"
+    },
+    "minAmount": 3371
+  },
+  {
+    "id": "O943SJoFnEasRogJCZGFZ",
+    "balance": {
+      "currency": "RUB",
+      "amount": 4457613
+    },
+    "exchangeRate": 6500.22,
+    "isVerified": false,
+    "status": "buyer",
+    "userName": "Александр",
+    "wallet": {
+      "currency": "KEKS",
+      "address": "u0kb8muw7ssxvyq503il2idobiqoqtmcx5lempx9"
+    },
+    "minAmount": 18917
+  },
+  {
+    "id": "Pg57Xr2PvBBFn4j07GNb4",
+    "balance": {
+      "currency": "KEKS",
+      "amount": 6.22
+    },
+    "exchangeRate": 6311.7,
+    "isVerified": true,
+    "status": "seller",
+    "userName": "Алина",
+    "paymentMethods": [
+      {
+        "currency": "RUB",
+        "provider": "Tinkoff",
+        "accountNumber": "0000 0000 0000 8249"
+      },
+      {
+        "currency": "RUB",
+        "provider": "Cash in person"
+      }
+    ],
+    "coords": {
+      "lat": 59.59973,
+      "lng": 29.96919
+    },
+    "minAmount": 0
+  },
+  {
+    "id": "wz4eXYL0KyzgLmCHBThA9",
+    "balance": {
+      "currency": "KEKS",
+      "amount": 21.2
+    },
+    "exchangeRate": 6729.66,
+    "isVerified": true,
+    "status": "seller",
+    "userName": "Елена",
+    "paymentMethods": [
+      {
+        "currency": "RUB",
+        "provider": "Sberbank",
+        "accountNumber": "0000 0000 0000 1956"
+      }
+    ],
+    "minAmount": 1
+  },
+  {
+    "id": "mgrZd5hPXyzXJBeXjnGjE",
+    "balance": {
+      "currency": "KEKS",
+      "amount": 59.23
+    },
+    "exchangeRate": 7783.79,
+    "isVerified": false,
+    "status": "seller",
+    "userName": "Алексей",
+    "paymentMethods": [
+      {
+        "currency": "RUB",
+        "provider": "Tinkoff",
+        "accountNumber": "0000 0000 0000 3877"
+      }
+    ],
+    "minAmount": 3
+  },
+  {
+    "id": "7Fgbr6cJFRAnFCG62Nxgo",
+    "balance": {
+      "currency": "KEKS",
+      "amount": 21.47
+    },
+    "exchangeRate": 9634.71,
+    "isVerified": true,
+    "status": "seller",
+    "userName": "Владимир",
+    "paymentMethods": [
+      {
+        "currency": "RUB",
+        "provider": "Tinkoff",
+        "accountNumber": "0000 0000 0000 9682"
+      },
+      {
+        "currency": "RUB",
+        "provider": "Cash in person"
+      }
+    ],
+    "coords": {
+      "lat": 59.91313,
+      "lng": 30.17176
+    },
+    "minAmount": 2
+  },
+  {
+    "id": "XlcxJFvYXE0us5KaktBWe",
+    "balance": {
+      "currency": "KEKS",
+      "amount": 34.8
+    },
+    "exchangeRate": 9752.52,
+    "isVerified": false,
+    "status": "seller",
+    "userName": "Анастасия",
+    "paymentMethods": [
+      {
+        "currency": "RUB",
+        "provider": "Sberbank",
+        "accountNumber": "0000 0000 0000 5852"
+      }
+    ],
+    "minAmount": 2
+  },
+  {
+    "id": "9IUknsL9w9oo4AsW5nFVE",
+    "balance": {
+      "currency": "KEKS",
+      "amount": 62.65
+    },
+    "exchangeRate": 1939.44,
+    "isVerified": false,
+    "status": "seller",
+    "userName": "Кирилл",
+    "paymentMethods": [
+      {
+        "currency": "RUB",
+        "provider": "Tinkoff",
+        "accountNumber": "0000 0000 0000 6069"
+      },
+      {
+        "currency": "RUB",
+        "provider": "Sberbank",
+        "accountNumber": "0000 0000 0000 8551"
+      }
+    ],
+    "minAmount": 0
+  },
+  {
+    "id": "kqdQdeZ5OFBAXA1y2NvVy",
+    "balance": {
+      "currency": "RUB",
+      "amount": 430539
+    },
+    "exchangeRate": 8587.06,
+    "isVerified": true,
+    "status": "buyer",
+    "userName": "Светлана",
+    "wallet": {
+      "currency": "KEKS",
+      "address": "crilj7wh2kr0fgki9x3ymys5raq3ntoi5ga829hh"
+    },
+    "minAmount": 2801
+  },
+  {
+    "id": "lcDHNRBWr48kwFToav-iR",
+    "balance": {
+      "currency": "KEKS",
+      "amount": 71.43
+    },
+    "exchangeRate": 4688.27,
+    "isVerified": true,
+    "status": "seller",
+    "userName": "Илья",
+    "paymentMethods": [
+      {
+        "currency": "RUB",
+        "provider": "QIWI",
+        "accountNumber": "0000 0000 0000 2041"
+      },
+      {
+        "currency": "RUB",
+        "provider": "Tinkoff",
+        "accountNumber": "0000 0000 0000 8979"
+      }
+    ],
+    "minAmount": 2
+  },
+  {
+    "id": "fyFNXShl9nEUC-FHmo389",
+    "balance": {
+      "currency": "KEKS",
+      "amount": 69.86
+    },
+    "exchangeRate": 564.21,
+    "isVerified": false,
+    "status": "seller",
+    "userName": "Зинаида",
+    "paymentMethods": [
+      {
+        "currency": "RUB",
+        "provider": "Cash in person"
+      }
+    ],
+    "coords": {
+      "lat": 59.76031,
+      "lng": 30.04847
+    },
+    "minAmount": 0
+  },
+  {
+    "id": "RVQXTZb6oFBrWc-A9B7k5",
+    "balance": {
+      "currency": "KEKS",
+      "amount": 3.75
+    },
+    "exchangeRate": 5938.5,
+    "isVerified": true,
+    "status": "seller",
+    "userName": "Светлана",
+    "paymentMethods": [
+      {
+        "currency": "RUB",
+        "provider": "Cash in person"
+      }
+    ],
+    "coords": {
+      "lat": 59.50922,
+      "lng": 30.26301
+    },
+    "minAmount": 0
+  },
+  {
+    "id": "EXfBW5zwHT7Hu5jh-RIXa",
+    "balance": {
+      "currency": "KEKS",
+      "amount": 18.2
+    },
+    "exchangeRate": 6101.72,
+    "isVerified": true,
+    "status": "seller",
+    "userName": "Андрей",
+    "paymentMethods": [
+      {
+        "currency": "RUB",
+        "provider": "QIWI",
+        "accountNumber": "0000 0000 0000 5428"
+      }
+    ],
+    "minAmount": 1
+  },
+  {
+    "id": "r9AH69ItWAuV_dCcIuY7S",
+    "balance": {
+      "currency": "KEKS",
+      "amount": 41.2
+    },
+    "exchangeRate": 4044.56,
+    "isVerified": false,
+    "status": "seller",
+    "userName": "Кирилл",
+    "paymentMethods": [
+      {
+        "currency": "RUB",
+        "provider": "Sberbank",
+        "accountNumber": "0000 0000 0000 6820"
+      },
+      {
+        "currency": "RUB",
+        "provider": "Tinkoff",
+        "accountNumber": "0000 0000 0000 7209"
+      }
+    ],
+    "minAmount": 1
+  },
+  {
+    "id": "n6VUbAKeoERAMheLznIY0",
+    "balance": {
+      "currency": "RUB",
+      "amount": 8382034
+    },
+    "exchangeRate": 4469.36,
+    "isVerified": false,
+    "status": "buyer",
+    "userName": "Григорий",
+    "wallet": {
+      "currency": "KEKS",
+      "address": "62re027odt41vl5ptssrlpjvglccxjdqps7mmxgm"
+    },
+    "minAmount": 4656
+  },
+  {
+    "id": "lTakv-Klcwbt5nBT8LZrD",
+    "balance": {
+      "currency": "KEKS",
+      "amount": 53.85
+    },
+    "exchangeRate": 8916.85,
+    "isVerified": true,
+    "status": "seller",
+    "userName": "Людмила",
+    "paymentMethods": [
+      {
+        "currency": "RUB",
+        "provider": "Tinkoff",
+        "accountNumber": "0000 0000 0000 4764"
+      },
+      {
+        "currency": "RUB",
+        "provider": "Sberbank",
+        "accountNumber": "0000 0000 0000 2017"
+      }
+    ],
+    "minAmount": 1
+  },
+  {
+    "id": "f3FMYhAhUH-RUlAvd97X6",
+    "balance": {
+      "currency": "KEKS",
+      "amount": 48.83
+    },
+    "exchangeRate": 2449.34,
+    "isVerified": true,
+    "status": "seller",
+    "userName": "Григорий",
+    "paymentMethods": [
+      {
+        "currency": "RUB",
+        "provider": "Cash in person"
+      },
+      {
+        "currency": "RUB",
+        "provider": "QIWI",
+        "accountNumber": "0000 0000 0000 1204"
+      },
+      {
+        "currency": "RUB",
+        "provider": "Tinkoff",
+        "accountNumber": "0000 0000 0000 6097"
+      }
+    ],
+    "coords": {
+      "lat": 59.80234,
+      "lng": 29.89531
+    },
+    "minAmount": 0
+  },
+  {
+    "id": "McPNvoMDYa83g_hya1j2e",
+    "balance": {
+      "currency": "RUB",
+      "amount": 9373358
+    },
+    "exchangeRate": 5720.38,
+    "isVerified": false,
+    "status": "buyer",
+    "userName": "Илья",
+    "wallet": {
+      "currency": "KEKS",
+      "address": "hvi4lsl23omysc8t6uwo3n72gjwa0k0n6ohaeot1"
+    },
+    "minAmount": 73608
+  },
+  {
+    "id": "E2NNmakgrOWtO9OW_B2BZ",
+    "balance": {
+      "currency": "KEKS",
+      "amount": 87.44
+    },
+    "exchangeRate": 163.06,
+    "isVerified": true,
+    "status": "seller",
+    "userName": "Анастасия",
+    "paymentMethods": [
+      {
+        "currency": "RUB",
+        "provider": "Cash in person"
+      },
+      {
+        "currency": "RUB",
+        "provider": "Sberbank",
+        "accountNumber": "0000 0000 0000 1266"
+      }
+    ],
+    "coords": {
+      "lat": 59.85305,
+      "lng": 29.56851
+    },
+    "minAmount": 0
+  },
+  {
+    "id": "RTMKEuL79-PCj_6vOWvYX",
+    "balance": {
+      "currency": "RUB",
+      "amount": 4252096
+    },
+    "exchangeRate": 2825.4,
+    "isVerified": false,
+    "status": "buyer",
+    "userName": "Алина",
+    "wallet": {
+      "currency": "KEKS",
+      "address": "03i1kcbdspii5tzyrt19kavntz1tp5mn99byf7xe"
+    },
+    "minAmount": 31592
+  },
+  {
+    "id": "njQYfbsD7g_VLHP5tnoYG",
+    "balance": {
+      "currency": "KEKS",
+      "amount": 93.56
+    },
+    "exchangeRate": 1315.31,
+    "isVerified": true,
+    "status": "seller",
+    "userName": "Андрей",
+    "paymentMethods": [
+      {
+        "currency": "RUB",
+        "provider": "Tinkoff",
+        "accountNumber": "0000 0000 0000 2713"
+      },
+      {
+        "currency": "RUB",
+        "provider": "Cash in person"
+      }
+    ],
+    "coords": {
+      "lat": 59.99864,
+      "lng": 29.80676
+    },
+    "minAmount": 1
+  },
+  {
+    "id": "Z7hjTVPnuZRK8zxtE6Pk9",
+    "balance": {
+      "currency": "RUB",
+      "amount": 8480796
+    },
+    "exchangeRate": 4261.05,
+    "isVerified": false,
+    "status": "buyer",
+    "userName": "Кирилл",
+    "wallet": {
+      "currency": "KEKS",
+      "address": "6cyp5txxgys3fow069nf5h2axs9gbpqsf12ks79f"
+    },
+    "minAmount": 66133
+  },
+  {
+    "id": "h81xUBSrfzoMOFTc-IVEn",
+    "balance": {
+      "currency": "RUB",
+      "amount": 7892911
+    },
+    "exchangeRate": 1620.7,
+    "isVerified": false,
+    "status": "buyer",
+    "userName": "Антон",
+    "wallet": {
+      "currency": "KEKS",
+      "address": "38us7hkka4qgqbv506i6nfrp1sdjcw1levxopzr5"
+    },
+    "minAmount": 64317
+  },
+  {
+    "id": "o5FtDBMylVqQu10x-gDIC",
+    "balance": {
+      "currency": "KEKS",
+      "amount": 58.87
+    },
+    "exchangeRate": 2939.27,
+    "isVerified": false,
+    "status": "seller",
+    "userName": "Анастасия",
+    "paymentMethods": [
+      {
+        "currency": "RUB",
+        "provider": "Tinkoff",
+        "accountNumber": "0000 0000 0000 2288"
+      },
+      {
+        "currency": "RUB",
+        "provider": "Cash in person"
+      }
+    ],
+    "coords": {
+      "lat": 59.66349,
+      "lng": 30.23737
+    },
+    "minAmount": 2
+  },
+  {
+    "id": "Wg9bi2AbP6M40euUYruzL",
+    "balance": {
+      "currency": "KEKS",
+      "amount": 33.29
+    },
+    "exchangeRate": 1536.36,
+    "isVerified": true,
+    "status": "seller",
+    "userName": "Пётр",
+    "paymentMethods": [
+      {
+        "currency": "RUB",
+        "provider": "Tinkoff",
+        "accountNumber": "0000 0000 0000 2150"
+      },
+      {
+        "currency": "RUB",
+        "provider": "QIWI",
+        "accountNumber": "0000 0000 0000 3175"
+      }
+    ],
+    "minAmount": 0
+  },
+  {
+    "id": "aXJLLKVQ6V2yWP_W7_uM1",
+    "balance": {
+      "currency": "KEKS",
+      "amount": 14.4
+    },
+    "exchangeRate": 8061.4,
+    "isVerified": true,
+    "status": "seller",
+    "userName": "Светлана",
+    "paymentMethods": [
+      {
+        "currency": "RUB",
+        "provider": "Tinkoff",
+        "accountNumber": "0000 0000 0000 5287"
+      },
+      {
+        "currency": "RUB",
+        "provider": "Sberbank",
+        "accountNumber": "0000 0000 0000 8947"
+      }
+    ],
+    "minAmount": 1
+  },
+  {
+    "id": "b9iM_a4yFpBXjHAJqFaAM",
+    "balance": {
+      "currency": "KEKS",
+      "amount": 87.88
+    },
+    "exchangeRate": 8835.55,
+    "isVerified": true,
+    "status": "seller",
+    "userName": "Анастасия",
+    "paymentMethods": [
+      {
+        "currency": "RUB",
+        "provider": "Cash in person"
+      }
+    ],
+    "coords": {
+      "lat": 59.89315,
+      "lng": 29.57509
+    },
+    "minAmount": 1
+  },
+  {
+    "id": "gsgiaw6JH6j3U1lAlaUc5",
+    "balance": {
+      "currency": "RUB",
+      "amount": 1933646
+    },
+    "exchangeRate": 5571.8,
+    "isVerified": true,
+    "status": "buyer",
+    "userName": "Сергей",
+    "wallet": {
+      "currency": "KEKS",
+      "address": "p1enp1tp4oua2r1ef0y78bww9628aa41lbupfrj3"
+    },
+    "minAmount": 12797
+  },
+  {
+    "id": "1Hn4H4iKaZxf2hijmSQGh",
+    "balance": {
+      "currency": "RUB",
+      "amount": 8070103
+    },
+    "exchangeRate": 3145.5,
+    "isVerified": true,
+    "status": "buyer",
+    "userName": "Пётр",
+    "wallet": {
+      "currency": "KEKS",
+      "address": "jv7l9spfri97hvhp29xrb6wfwco65yuhkthzqro8"
+    },
+    "minAmount": 10650
+  },
+  {
+    "id": "AcVmdNgn6B6qRPUKBmRUG",
+    "balance": {
+      "currency": "RUB",
+      "amount": 1358695
+    },
+    "exchangeRate": 7259.32,
+    "isVerified": true,
+    "status": "buyer",
+    "userName": "Денис",
+    "wallet": {
+      "currency": "KEKS",
+      "address": "q5pu7rfhjbbi5dvifodlsb3da3wxdp9lsk945690"
+    },
+    "minAmount": 6527
+  }
+]

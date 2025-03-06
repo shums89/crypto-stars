@@ -125,7 +125,7 @@
                 Для удобства обращения из JS, вы можете добавить контейнерам id
                 или уникальные классы
             -->
-      <div class="container" style="display: none">
+      <div class="container container--error" style="display: none">
         <div class="message">
           <span class="message__icon">
             <svg width="60" height="60" aria-hidden="true">
@@ -135,11 +135,12 @@
           <p class="message__paragraph">
             Сервер временно недоступен, попробуйте
             <a href="javascript:window.location.reload()" class="link">обновить страницу</a>
+            или загрузить <button class="link btn-mocks" style="display: inline-block; border: none; cursor: pointer;">тестовые данные</button>
           </p>
         </div>
       </div>
 
-      <div class="container">
+      <div class="container container--users">
         <div class="users-nav">
           <div class="users-nav__tabs">
             <div class="tabs no-transition-global tabs--toggle-buy-sell" data-tabs="parent" data-delay="300">

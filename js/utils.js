@@ -16,7 +16,7 @@ const showAlert = (message) => {
 
   setTimeout(() => {
     alertContainer.remove();
-  }, 5000);
+  }, 3000);
 };
 
 export {
