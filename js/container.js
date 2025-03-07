@@ -1,6 +1,7 @@
 import { renderContractors } from './contractors.js';
 import { getContractors } from './data.js';
-import { containerNoResult, containerUsers, nav } from './elems.js';
+import { containerMap, containerNoResult, containerUsers, nav } from './elems.js';
+import { clearMap, renderMap } from './map.js';
 
 const hideNoResult = () => {
   containerUsers.querySelector('.users-list__table-body').style = '';
@@ -12,8 +13,42 @@ const showNoResult = () => {
   containerNoResult.style = '';
 };
 
+const getStatusBuyTab = () => {
+  const toggle = document.querySelector('.tabs--toggle-buy-sell').querySelector('.tabs__control.is-active');
+
+  return toggle.matches('.btn-buy');
+};
+
+const getStatusMapTab = () => {
+  const toggle = document.querySelector('.tabs--toggle-list-map').querySelector('.tabs__control.is-active');
+
+  return toggle.matches('.btn-map');
+};
+
+const renderData = (data) => {
+  if (getStatusMapTab()) {
+    containerUsers.querySelector('.users-list').style.display = 'none';
+    containerMap.style = '';
+
+    if (getStatusBuyTab()) {
+      renderMap(data);
+    } else {
+      clearMap();
+    }
+  } else {
+    containerMap.style.display = 'none';
+    containerUsers.querySelector('.users-list').style = '';
+
+    if (!data.length) {
+      showNoResult();
+    } else {
+      hideNoResult();
+      renderContractors(data);
+    }
+  }
+};
+
 const filteredTabs = () => {
-  const actionBtn = nav.querySelector('.tabs--toggle-buy-sell').querySelector('.is-active');
   const checkingVerifiedUsers = nav.querySelector('#checked-users');
 
   let filteredData = getContractors().slice();
@@ -22,18 +57,16 @@ const filteredTabs = () => {
     filteredData = filteredData.filter((el) => el.isVerified);
   }
 
-  if (actionBtn.matches('.btn-buy')) {
+  if (getStatusBuyTab()) {
     filteredData = filteredData.filter((el) => el.status === 'seller');
+    if (getStatusMapTab()) {
+      filteredData = filteredData.filter((el) => el.paymentMethods.some((elem) => elem.provider.toLowerCase() === 'cash in person'));
+    }
   } else {
     filteredData = filteredData.filter((el) => el.status === 'buyer');
   }
 
-  if (!filteredData.length) {
-    showNoResult();
-  } else {
-    hideNoResult();
-    renderContractors(filteredData);
-  }
+  renderData(filteredData);
 };
 
 const toggleContainer = (evt) => {

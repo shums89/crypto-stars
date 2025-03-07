@@ -25,8 +25,7 @@ export const createRowElement = (contractor) => {
       <ul class="users-list__badges-list">${paymentMethods}</ul>
     </td>
     <td class="users-list__table-cell users-list__table-btn">
-      <button class="btn btn--greenborder" type="button">Обменять
-      </button>
+      <button class="btn btn--greenborder" type="button">Обменять</button>
     </td>
 `;
 

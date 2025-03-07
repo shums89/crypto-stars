@@ -11,6 +11,7 @@
   <link rel="preload" href="fonts/exo2-semibold.woff2" as="font" crossorigin="anonymous">
   <link rel="preload" href="fonts/exo2-bold.woff2" as="font" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.min.css">
+  <link rel="stylesheet" href="leaflet/leaflet.css">
 </head>
 
 <body>
@@ -205,8 +206,8 @@
       </div>
 
       <!-- При переключении на карту нужно отобразить данный контейнер -->
-      <div class="container" style="display: none">
-        <div class="map">
+      <div class="container container--map" style="display: none">
+        <div class="map" id="map">
           <!--
                         Карту нужно отрисовать в этот контейнер. Иконки для карты -
                         img/pin.svg и img/pin-verified.svg для обычных пользователей
@@ -528,35 +529,35 @@
     </tr>
   </template>
 
-  <template id="map-baloon__template">
-    <!--
+  <!-- <template id="map-baloon__template"> -->
+  <!--
             При клонировании данные нужно заменить на настоящие.
             Для удобства обращения из JS, вы можете добавить обёрткам id
             или уникальные классы там, где их нет, а также сами обёрки (используйте <span>)
         -->
-    <div class="user-card">
-      <span class="user-card__user-name">
-        <!-- Обратите внимание, что "звёздочка только" у верифицированных пользователей -->
-        <svg width="20" height="20" aria-hidden="true">
-          <use xlink:href="#icon-star"></use>
-        </svg>
-        <span>Неопознанный енот</span>
-      </span>
-      <p class="user-card__cash-item"><span class="user-card__cash-label">Валюта</span><span class="user-card__cash-data">KEKS</span></p>
-      <p class="user-card__cash-item"><span class="user-card__cash-label">Курс</span><span class="user-card__cash-data">9 999 999 ₽</span></p>
-      <p class="user-card__cash-item"><span class="user-card__cash-label">Лимит</span><span class="user-card__cash-data">9 900 ₽ – 9 900 000 000 ₽</span></p>
-      <ul class="user-card__badges-list">
-        <li class="user-card__badges-item badge">BitTransfer</li>
-        <li class="user-card__badges-item badge">CryptoEx</li>
-        <li class="user-card__badges-item badge">Первый криптобанк</li>
-      </ul>
-      <button class="btn btn--green user-card__change-btn" type="button">Обменять
-      </button>
-    </div>
-  </template>
+  <div class="user-card">
+    <span class="user-card__user-name">
+      <!-- Обратите внимание, что "звёздочка только" у верифицированных пользователей -->
+      <svg width="20" height="20" aria-hidden="true">
+        <use xlink:href="#icon-star"></use>
+      </svg>
+      <span>Неопознанный енот</span>
+    </span>
+    <p class="user-card__cash-item"><span class="user-card__cash-label">Валюта</span><span class="user-card__cash-data">KEKS</span></p>
+    <p class="user-card__cash-item"><span class="user-card__cash-label">Курс</span><span class="user-card__cash-data">9 999 999 ₽</span></p>
+    <p class="user-card__cash-item"><span class="user-card__cash-label">Лимит</span><span class="user-card__cash-data">9 900 ₽ – 9 900 000 000 ₽</span></p>
+    <ul class="user-card__badges-list">
+      <li class="user-card__badges-item badge">BitTransfer</li>
+      <li class="user-card__badges-item badge">CryptoEx</li>
+      <li class="user-card__badges-item badge">Первый криптобанк</li>
+    </ul>
+    <button class="btn btn--green user-card__change-btn" type="button">Обменять
+    </button>
+  </div>
+  <!-- </template> -->
 
   <script src="./js/main.js" type="module"></script>
-
+  <script src="leaflet/leaflet.js" defer></script>
 </body>
 
 </html>
