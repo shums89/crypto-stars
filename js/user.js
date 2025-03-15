@@ -1,20 +1,26 @@
 import { getUser } from './data.js';
 import { userProfile } from './elems.js';
+import { formatNumber } from './utils.js';
 
-export const renderUserData = () => {
+const getUserBalance = (currency) => {
+  const user = getUser();
+
+  return user.balances
+    .slice()
+    .filter((balance) => balance.currency.toUpperCase() === currency.toUpperCase())[0].amount || 0;
+};
+
+const renderUserData = () => {
   const cryptoBalanceField = userProfile.querySelector('#user-crypto-balance');
   const fiatBalanceField = userProfile.querySelector('#user-fiat-balance');
   const nameField = userProfile.querySelector('.user-profile__name span');
 
-  const user = getUser();
+  cryptoBalanceField.textContent = formatNumber(getUserBalance('KEKS'));
+  fiatBalanceField.textContent = formatNumber(getUserBalance('RUB'));
+  nameField.textContent = getUser().userName;
+};
 
-  cryptoBalanceField.textContent = user.balances
-    .slice()
-    .filter((balance) => balance.currency.toUpperCase() === 'KEKS')[0].amount;
-
-  fiatBalanceField.textContent = user.balances
-    .slice()
-    .filter((balance) => balance.currency.toUpperCase() === 'RUB')[0].amount;
-
-  nameField.textContent = user.userName;
+export {
+  getUserBalance,
+  renderUserData,
 };

@@ -265,25 +265,33 @@
           <input type="hidden" name="receivingCurrency">
 
           <div class="transaction-info">
-            <p class="transaction-info__item transaction-info__item--name"><span class="transaction-info__label">Пользователь</span><span class="transaction-info__data">
+            <p class="transaction-info__item transaction-info__item--name"><span class="transaction-info__label">Пользователь</span>
+              <span class="transaction-info__data transaction-info__data--user">
                 <svg width="20" height="20" aria-hidden="true">
                   <use xlink:href="#icon-star"></use>
-                </svg>John Smith</span></p>
-            <p class="transaction-info__item transaction-info__item--exchangerate"><span class="transaction-info__label">Курс</span><span class="transaction-info__data">9 999
-                999&nbsp;₽</span></p>
-            <p class="transaction-info__item transaction-info__item--cashlimit"><span class="transaction-info__label">Лимит</span><span class="transaction-info__data">9 999
-                999&nbsp;₽&nbsp;-&nbsp;9 999 999 000&nbsp;₽</span></p>
+                </svg>
+                <span>John Smith</span>
+              </span>
+            </p>
+            <p class="transaction-info__item transaction-info__item--exchangerate">
+              <span class="transaction-info__label">Курс</span>
+              <span class="transaction-info__data">9 999 999&nbsp;₽</span>
+            </p>
+            <p class="transaction-info__item transaction-info__item--cashlimit">
+              <span class="transaction-info__label">Лимит</span>
+              <span class="transaction-info__data">9 999 999&nbsp;₽&nbsp;-&nbsp;9 999 999 000&nbsp;₽</span>
+            </p>
           </div>
           <div class="modal__container modal__container--small">
             <div class="modal__input-wrapper modal__input-wrapper--min">
               <div class="custom-input">
-                <label><span class="custom-input__label">Оплата</span><span class="custom-input__unit">₽</span>
-                  <button class="btn btn--textblue custom-input__btn" type="button">обменять все
-                  </button>
-                  <input type="number" value="" placeholder="0">
+                <label><span class="custom-input__label">Оплата</span>
+                  <span class="custom-input__unit">₽</span>
+                  <button class="btn btn--textblue custom-input__btn" type="button" data-modal data-modal-payment>обменять все</button>
+                  <input type="number" step="0.01" value="" min="0" placeholder="0" data-modal-payment required>
                 </label>
                 <!-- Пример стилизации ошибки валидации -->
-                <div class="custom-input__error">Минимальная сумма — 9 999 999 ₽</div>
+                <!-- <div class="custom-input__error">Минимальная сумма — 9 999 999 ₽</div> -->
               </div>
             </div>
             <svg class="modal__container-svg" width="14" height="12" aria-hidden="true">
@@ -291,8 +299,10 @@
             </svg>
             <div class="modal__input-wrapper modal__input-wrapper--min">
               <div class="custom-input">
-                <label><span class="custom-input__label">Зачисление</span><span class="custom-input__unit">KEKS</span>
-                  <input type="number" placeholder="0">
+                <label><span class="custom-input__label">Зачисление</span>
+                  <span class="custom-input__unit">KEKS</span>
+                  <button class="btn btn--textblue custom-input__btn" type="button" data-modal data-modal-crediting>обменять все</button>
+                  <input type="number" step="0.01" min="0" placeholder="0" data-modal-crediting required>
                 </label>
               </div>
             </div>
@@ -305,7 +315,7 @@
                                     которые есть у пользователя. Способ - удалить из разметки или добавить disable-атрибут
                                     остаётся на ваше усмотрение. Первый пункт, с предложением выбора, должен быть всегда
                                 -->
-                <select>
+                <select data-modal-payment-methods>
                   <option selected disabled>Выберите платёжную систему</option>
                   <option>CryptoEx</option>
                   <option>Первый криптобанк</option>
@@ -318,37 +328,38 @@
               <div class="custom-input">
                 <!-- В случае, если выбрана оплата наличными, поле нужно оставить пустым -->
                 <label><span class="custom-input__label">Номер банковской карты пользователя</span>
-                  <input type="number" placeholder="1234 5678 9012 3456" disabled>
+                  <input type="text" placeholder="1234 5678 9012 3456" data-modal-account-number disabled>
                 </label>
               </div>
             </div>
             <div class="modal__input-wrapper modal__input-wrapper--decorated">
               <div class="custom-input">
                 <label><span class="custom-input__label">Номер криптокошелька пользователя</span>
-                  <input type="number" placeholder="08701943851-9832345" disabled>
+                  <input type="text" placeholder="08701943851-9832345" data-modal-wallet-address disabled>
                 </label>
               </div>
             </div>
             <div class="modal__input-wrapper modal__input-wrapper--decorated">
               <div class="custom-input">
-                <label><span class="custom-input__label">Платёжный пароль</span>
-                  <input type="password" value="123456" placeholder="Введите пароль">
+                <label>
+                  <span class="custom-input__label">Платёжный пароль</span>
+                  <input type="password" value="180712" placeholder="Введите пароль">
                 </label>
               </div>
             </div>
-            <button class="btn btn--green modal__submit" type="submit">Обменять
-            </button>
+            <button class="btn btn--green modal__submit" type="submit">Обменять</button>
             <!-- Сообщение, которое нужно показать в случае неудачной отправки данных -->
-            <p class="modal__validation-message modal__validation-message--error">
+            <p class="modal__validation-message modal__validation-message--error visually-hidden">
               <svg width="20" height="20" aria-hidden="true">
                 <use xlink:href="#icon-error"></use>
               </svg>Ошибка заполнения формы
             </p>
             <!-- Сообщение, которое нужно показать в случае успешной отправки данных -->
-            <p class="modal__validation-message modal__validation-message--success">
+            <p class="modal__validation-message modal__validation-message--success visually-hidden">
               <svg width="20" height="20" aria-hidden="true">
                 <use xlink:href="#icon-success"></use>
-              </svg>Данные успешно отправлены
+              </svg>
+              Данные успешно отправлены
             </p>
           </div>
         </form>
@@ -390,11 +401,11 @@
           <div class="transaction-info">
             <p class="transaction-info__item transaction-info__item--name">
               <span class="transaction-info__label">Пользователь</span>
-              <span class="transaction-info__data">
+              <span class="transaction-info__data transaction-info__data--user">
                 <svg width="20" height="20" aria-hidden="true">
                   <use xlink:href="#icon-star"></use>
                 </svg>
-                John Smith
+                <span>John Smith</span>
               </span>
             </p>
             <p class="transaction-info__item transaction-info__item--exchangerate">
@@ -403,8 +414,7 @@
             </p>
             <p class="transaction-info__item transaction-info__item--cashlimit">
               <span class="transaction-info__label">Лимит</span>
-              <span class="transaction-info__data">9 999 999&nbsp;₽&nbsp;-&nbsp;9 999 999
-                000&nbsp;₽</span>
+              <span class="transaction-info__data">9 999 999&nbsp;₽&nbsp;-&nbsp;9 999 999 000&nbsp;₽</span>
             </p>
           </div>
           <div class="modal__container">
@@ -413,11 +423,10 @@
                 <label>
                   <span class="custom-input__label">Оплата</span>
                   <span class="custom-input__unit">KEKS</span>
-                  <button class="btn btn--textblue custom-input__btn" type="button">обменять
-                    все</button>
-                  <input type="number" value="" placeholder="0">
+                  <button class="btn btn--textblue custom-input__btn" type="button" data-modal data-modal-payment>обменять все</button>
+                  <input type="number" step="0.01" value="" min="0" placeholder="0" data-modal-payment required>
                 </label>
-                <div class="custom-input__error">Минимальная сумма — 9 999 999 ₽</div>
+                <!-- <div class="custom-input__error">Минимальная сумма — 9 999 999 ₽</div> -->
               </div>
             </div>
             <svg class="modal__container-svg" width="14" height="12" aria-hidden="true">
@@ -425,10 +434,10 @@
             </svg>
             <div class="modal__input-wrapper modal__input-wrapper--min">
               <div class="custom-input">
-                <label><span class="custom-input__label">Зачисление</span><span class="custom-input__unit">₽</span>
-                  <button class="btn btn--textblue custom-input__btn" type="button">обменять все
-                  </button>
-                  <input type="number" value="" placeholder="0">
+                <label><span class="custom-input__label">Зачисление</span>
+                  <span class="custom-input__unit">₽</span>
+                  <button class="btn btn--textblue custom-input__btn" type="button" data-modal data-modal-crediting>обменять все</button>
+                  <input type="number" step="0.01" value="" placeholder="0" data-modal-crediting required>
                 </label>
               </div>
             </div>
@@ -437,7 +446,7 @@
             <div class="modal__input-wrapper modal__input-wrapper--decorated">
               <div class="custom-input">
                 <label><span class="custom-input__label">Номер криптокошелька пользователя</span>
-                  <input type="number" placeholder="08701943851-983457-2345" disabled>
+                  <input type="text" min="0" placeholder="08701943851-983457-2345" data-modal-wallet-address disabled>
                 </label>
               </div>
             </div>
@@ -448,7 +457,7 @@
                                     которые есть у пользователя. Способ - удалить из разметки или добавить disable-атрибут
                                     остаётся на ваше усмотрение. Первый пункт, с предложением выбора, должен быть всегда
                                 -->
-                <select>
+                <select data-modal-payment-methods>
                   <option selected disabled>Выберите платёжную систему</option>
                   <option>CryptoEx</option>
                   <option>Первый криптобанк</option>
@@ -461,30 +470,30 @@
               <div class="custom-input">
                 <!-- В случае, если выбрана оплата наличными, поле нужно оставить пустым -->
                 <label><span class="custom-input__label">Номер банковской карты пользователя</span>
-                  <input type="number" placeholder="1234 5678 9012 3456" disabled>
+                  <input type="text" placeholder="1234 5678 9012 3456" data-modal-account-number disabled>
                 </label>
               </div>
             </div>
             <div class="modal__input-wrapper modal__input-wrapper--decorated">
               <div class="custom-input">
                 <label><span class="custom-input__label">Платёжный пароль</span>
-                  <input type="password" placeholder="Введите пароль">
+                  <input type="password" value="180712" placeholder="Введите пароль">
                 </label>
               </div>
             </div>
-            <button class="btn btn--green modal__submit" type="submit">Обменять
-            </button>
+            <button class="btn btn--green modal__submit" type="submit">Обменять</button>
             <!-- Сообщение, которое нужно показать в случае неудачной отправки данных -->
-            <p class="modal__validation-message modal__validation-message--error">
+            <p class="modal__validation-message modal__validation-message--error visually-hidden">
               <svg width="20" height="20" aria-hidden="true">
                 <use xlink:href="#icon-error"></use>
               </svg>Ошибка заполнения формы
             </p>
             <!-- Сообщение, которое нужно показать в случае успешной отправки данных -->
-            <p class="modal__validation-message modal__validation-message--success">
+            <p class="modal__validation-message modal__validation-message--success visually-hidden">
               <svg width="20" height="20" aria-hidden="true">
                 <use xlink:href="#icon-success"></use>
-              </svg>Данные успешно отправлены
+              </svg>
+              Данные успешно отправлены
             </p>
           </div>
         </form>
@@ -529,32 +538,32 @@
     </tr>
   </template>
 
-  <!-- <template id="map-baloon__template"> -->
-  <!--
+  <template id="map-baloon__template">
+    <!--
             При клонировании данные нужно заменить на настоящие.
             Для удобства обращения из JS, вы можете добавить обёрткам id
             или уникальные классы там, где их нет, а также сами обёрки (используйте <span>)
         -->
-  <div class="user-card">
-    <span class="user-card__user-name">
-      <!-- Обратите внимание, что "звёздочка только" у верифицированных пользователей -->
-      <svg width="20" height="20" aria-hidden="true">
-        <use xlink:href="#icon-star"></use>
-      </svg>
-      <span>Неопознанный енот</span>
-    </span>
-    <p class="user-card__cash-item"><span class="user-card__cash-label">Валюта</span><span class="user-card__cash-data">KEKS</span></p>
-    <p class="user-card__cash-item"><span class="user-card__cash-label">Курс</span><span class="user-card__cash-data">9 999 999 ₽</span></p>
-    <p class="user-card__cash-item"><span class="user-card__cash-label">Лимит</span><span class="user-card__cash-data">9 900 ₽ – 9 900 000 000 ₽</span></p>
-    <ul class="user-card__badges-list">
-      <li class="user-card__badges-item badge">BitTransfer</li>
-      <li class="user-card__badges-item badge">CryptoEx</li>
-      <li class="user-card__badges-item badge">Первый криптобанк</li>
-    </ul>
-    <button class="btn btn--green user-card__change-btn" type="button">Обменять
-    </button>
-  </div>
-  <!-- </template> -->
+    <div class="user-card">
+      <span class="user-card__user-name">
+        <!-- Обратите внимание, что "звёздочка только" у верифицированных пользователей -->
+        <svg width="20" height="20" aria-hidden="true">
+          <use xlink:href="#icon-star"></use>
+        </svg>
+        <span>Неопознанный енот</span>
+      </span>
+      <p class="user-card__cash-item"><span class="user-card__cash-label">Валюта</span><span class="user-card__cash-data">KEKS</span></p>
+      <p class="user-card__cash-item"><span class="user-card__cash-label">Курс</span><span class="user-card__cash-data">9 999 999 ₽</span></p>
+      <p class="user-card__cash-item"><span class="user-card__cash-label">Лимит</span><span class="user-card__cash-data">9 900 ₽ – 9 900 000 000 ₽</span></p>
+      <ul class="user-card__badges-list">
+        <li class="user-card__badges-item badge">BitTransfer</li>
+        <li class="user-card__badges-item badge">CryptoEx</li>
+        <li class="user-card__badges-item badge">Первый криптобанк</li>
+      </ul>
+      <button class="btn btn--green user-card__change-btn" type="button">Обменять
+      </button>
+    </div>
+  </template>
 
   <script src="./js/main.js" type="module"></script>
   <script src="leaflet/leaflet.js" defer></script>

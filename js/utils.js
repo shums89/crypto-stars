@@ -19,6 +19,27 @@ const showAlert = (message) => {
   }, 3000);
 };
 
+const formatNumber = (value) => new Intl.NumberFormat('ru-RU').format(Math.floor(value * 100) / 100);
+
+const getCashLimit = (contractor) => {
+  let min = 0;
+  let max = 0;
+
+  if (contractor.status === 'seller') {
+    min = contractor.minAmount * contractor.exchangeRate;
+    max = contractor.balance.amount * contractor.exchangeRate;
+
+    return `${formatNumber(min)}&nbsp;₽&nbsp;-&nbsp;${formatNumber(max)}&nbsp;₽`;
+  } else {
+    min = contractor.minAmount / contractor.exchangeRate;
+    max = contractor.balance.amount / contractor.exchangeRate;
+
+    return `${formatNumber(min)}&nbsp;KEKS&nbsp;-&nbsp;${formatNumber(max)}&nbsp;KEKS`;
+  }
+};
+
 export {
   showAlert,
+  formatNumber,
+  getCashLimit,
 };

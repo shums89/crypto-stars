@@ -1,6 +1,8 @@
 import { usersList } from './elems.js';
+import { loadModal } from './modal.js';
+import { formatNumber, getCashLimit } from './utils.js';
 
-export const createRowElement = (contractor) => {
+const createRowElement = (contractor) => {
   const rowElement = document.createElement('tr');
   let paymentMethods = [];
 
@@ -19,8 +21,8 @@ export const createRowElement = (contractor) => {
       <span>${contractor.userName}</span>
     </td >
     <td class="users-list__table-cell users-list__table-currency">keks</td>
-    <td class="users-list__table-cell users-list__table-exchangerate">${new Intl.NumberFormat('ru-RU').format(contractor.exchangeRate)}&nbsp;₽</td>
-    <td class="users-list__table-cell users-list__table-cashlimit">${new Intl.NumberFormat('ru-RU').format(contractor.minAmount)}&nbsp;₽&nbsp;-&nbsp;${new Intl.NumberFormat('ru-RU').format(contractor.balance.amount * contractor.exchangeRate)}&nbsp;₽</td>
+    <td class="users-list__table-cell users-list__table-exchangerate">${formatNumber(contractor.exchangeRate)}&nbsp;₽</td>
+    <td class="users-list__table-cell users-list__table-cashlimit">${getCashLimit(contractor)}</td>
     <td class="users-list__table-cell users-list__table-payments">
       <ul class="users-list__badges-list">${paymentMethods}</ul>
     </td>
@@ -29,11 +31,17 @@ export const createRowElement = (contractor) => {
     </td>
 `;
 
+  rowElement.querySelector('button').addEventListener('click', () => loadModal(contractor.id));
+
   return rowElement;
 };
 
-export const renderContractors = (contractors) => {
+const renderContractors = (contractors) => {
   usersList.innerHTML = '';
 
   contractors.forEach((contractor) => usersList.appendChild(createRowElement(contractor)));
+};
+
+export {
+  renderContractors,
 };

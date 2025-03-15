@@ -1,3 +1,6 @@
+import { loadModal } from './modal.js';
+import { formatNumber, getCashLimit } from './utils.js';
+
 const MAP_INIT_VALUES = {
   lat: 59.92749,
   lng: 30.31127,
@@ -32,15 +35,17 @@ const createBaloon = (seller) => {
     </p>
     <p class="user-card__cash-item">
       <span class="user-card__cash-label">Курс</span>
-      <span class="user-card__cash-data">${new Intl.NumberFormat('ru-RU').format(seller.exchangeRate)} ₽</span>
+      <span class="user-card__cash-data">${formatNumber(seller.exchangeRate)} ₽</span>
     </p>
     <p class="user-card__cash-item">
       <span class="user-card__cash-label">Лимит</span>
-      <span class="user-card__cash-data">${new Intl.NumberFormat('ru-RU').format(seller.minAmount)} ₽ – ${new Intl.NumberFormat('ru-RU').format(seller.balance.amount * seller.exchangeRate)} ₽</span>
+      <span class="user-card__cash-data">${getCashLimit(seller)}</span>
     </p>
     <ul class="user-card__badges-list">${paymentMethods}</ul>
     <button class="btn btn--green user-card__change-btn" type="button">Обменять</button>
   `;
+
+  userCard.querySelector('button').addEventListener('click', () => loadModal(seller.id));
 
   return userCard;
 };
@@ -110,4 +115,4 @@ const renderMap = (sellers) => {
 export {
   renderMap,
   clearMap,
-}
+};
