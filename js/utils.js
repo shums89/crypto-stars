@@ -22,20 +22,17 @@ const showAlert = (message) => {
 const formatNumber = (value) => new Intl.NumberFormat('ru-RU').format(Math.floor(value * 100) / 100);
 
 const getCashLimit = (contractor) => {
-  let min = 0;
-  let max = 0;
+  const min = (contractor.status === 'seller')
+    ? contractor.minAmount * contractor.exchangeRate
+    : contractor.minAmount / contractor.exchangeRate;
 
-  if (contractor.status === 'seller') {
-    min = contractor.minAmount * contractor.exchangeRate;
-    max = contractor.balance.amount * contractor.exchangeRate;
+  const max = (contractor.status === 'seller')
+    ? contractor.balance.amount * contractor.exchangeRate
+    : contractor.balance.amount / contractor.exchangeRate;
 
-    return `${formatNumber(min)}&nbsp;₽&nbsp;-&nbsp;${formatNumber(max)}&nbsp;₽`;
-  } else {
-    min = contractor.minAmount / contractor.exchangeRate;
-    max = contractor.balance.amount / contractor.exchangeRate;
-
-    return `${formatNumber(min)}&nbsp;KEKS&nbsp;-&nbsp;${formatNumber(max)}&nbsp;KEKS`;
-  }
+  return (contractor.status === 'seller')
+    ? `${formatNumber(min)}&nbsp;₽&nbsp;-&nbsp;${formatNumber(max)}&nbsp;₽`
+    : `${formatNumber(min)}&nbsp;KEKS&nbsp;-&nbsp;${formatNumber(max)}&nbsp;KEKS`;
 };
 
 export {

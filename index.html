@@ -288,7 +288,7 @@
                 <label><span class="custom-input__label">Оплата</span>
                   <span class="custom-input__unit">₽</span>
                   <button class="btn btn--textblue custom-input__btn" type="button" data-modal data-modal-payment>обменять все</button>
-                  <input type="number" step="0.01" value="" min="0" placeholder="0" data-modal-payment required>
+                  <input name="sendingAmount" type="text" value="" min="0" placeholder="0" data-modal-payment required data-pristine-required-message="Обязательное поле">
                 </label>
                 <!-- Пример стилизации ошибки валидации -->
                 <!-- <div class="custom-input__error">Минимальная сумма — 9 999 999 ₽</div> -->
@@ -302,20 +302,20 @@
                 <label><span class="custom-input__label">Зачисление</span>
                   <span class="custom-input__unit">KEKS</span>
                   <button class="btn btn--textblue custom-input__btn" type="button" data-modal data-modal-crediting>обменять все</button>
-                  <input type="number" step="0.01" min="0" placeholder="0" data-modal-crediting required>
+                  <input name="receivingAmount" type="text" min="0" placeholder="0" data-modal-crediting required data-pristine-required-message="Обязательное поле">
                 </label>
               </div>
             </div>
           </div>
           <div class="modal__container">
             <div class="modal__select-wrapper">
-              <div class="select"><span>Плaтёжная система</span>
+              <div class="select custom-input"><span>Плaтёжная система</span>
                 <!--
                                     При отрисовке в списке платёжных систем нужно отразить только те,
                                     которые есть у пользователя. Способ - удалить из разметки или добавить disable-атрибут
                                     остаётся на ваше усмотрение. Первый пункт, с предложением выбора, должен быть всегда
                                 -->
-                <select data-modal-payment-methods>
+                <select name="paymentMethod" data-modal-payment-methods>
                   <option selected disabled>Выберите платёжную систему</option>
                   <option>CryptoEx</option>
                   <option>Первый криптобанк</option>
@@ -343,7 +343,7 @@
               <div class="custom-input">
                 <label>
                   <span class="custom-input__label">Платёжный пароль</span>
-                  <input type="password" value="180712" placeholder="Введите пароль">
+                  <input name="paymentPassword" type="password" value="180712" placeholder="Введите пароль">
                 </label>
               </div>
             </div>
@@ -424,7 +424,7 @@
                   <span class="custom-input__label">Оплата</span>
                   <span class="custom-input__unit">KEKS</span>
                   <button class="btn btn--textblue custom-input__btn" type="button" data-modal data-modal-payment>обменять все</button>
-                  <input type="number" step="0.01" value="" min="0" placeholder="0" data-modal-payment required>
+                  <input name="sendingAmount" type="text" value="" min="0" placeholder="0" data-modal-payment required data-pristine-required-message="Обязательное поле">
                 </label>
                 <!-- <div class="custom-input__error">Минимальная сумма — 9 999 999 ₽</div> -->
               </div>
@@ -437,7 +437,7 @@
                 <label><span class="custom-input__label">Зачисление</span>
                   <span class="custom-input__unit">₽</span>
                   <button class="btn btn--textblue custom-input__btn" type="button" data-modal data-modal-crediting>обменять все</button>
-                  <input type="number" step="0.01" value="" placeholder="0" data-modal-crediting required>
+                  <input name="receivingAmount" type="text" value="" placeholder="0" data-modal-crediting required data-pristine-required-message="Обязательное поле">
                 </label>
               </div>
             </div>
@@ -446,18 +446,18 @@
             <div class="modal__input-wrapper modal__input-wrapper--decorated">
               <div class="custom-input">
                 <label><span class="custom-input__label">Номер криптокошелька пользователя</span>
-                  <input type="text" min="0" placeholder="08701943851-983457-2345" data-modal-wallet-address disabled>
+                  <input type="text" placeholder="08701943851-983457-2345" data-modal-wallet-address disabled>
                 </label>
               </div>
             </div>
             <div class="modal__select-wrapper">
-              <div class="select"><span>Плaтёжная система</span>
+              <div class="select custom-input"><span>Плaтёжная система</span>
                 <!--
                                     При отрисовке в списке платёжных систем нужно отразить только те,
                                     которые есть у пользователя. Способ - удалить из разметки или добавить disable-атрибут
                                     остаётся на ваше усмотрение. Первый пункт, с предложением выбора, должен быть всегда
                                 -->
-                <select data-modal-payment-methods>
+                <select name="paymentMethod" data-modal-payment-methods>
                   <option selected disabled>Выберите платёжную систему</option>
                   <option>CryptoEx</option>
                   <option>Первый криптобанк</option>
@@ -477,7 +477,7 @@
             <div class="modal__input-wrapper modal__input-wrapper--decorated">
               <div class="custom-input">
                 <label><span class="custom-input__label">Платёжный пароль</span>
-                  <input type="password" value="180712" placeholder="Введите пароль">
+                  <input name="paymentPassword" type="password" value="180712" placeholder="Введите пароль">
                 </label>
               </div>
             </div>
@@ -567,6 +567,7 @@
 
   <script src="./js/main.js" type="module"></script>
   <script src="leaflet/leaflet.js" defer></script>
+  <script src="pristine/pristine.min.js" defer></script>
 </body>
 
 </html>

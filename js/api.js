@@ -11,7 +11,7 @@ const getData = (url, onSuccess, onFail) => {
     });
 };
 
-const sendData = (onSuccess, onFail, onFinally, body) => {
+const sendData = (onSuccess, onFail, body) => {
   fetch(
     URL_POST,
     {
@@ -23,14 +23,11 @@ const sendData = (onSuccess, onFail, onFinally, body) => {
       if (response.ok) {
         onSuccess();
       } else {
-        onFail('Не удалось отправить форму. Попробуйте ещё раз');
+        onFail();
       }
     })
     .catch(() => {
-      onFail('Не удалось отправить форму. Попробуйте ещё раз');
-    })
-    .finally(() => {
-      onFinally();
+      onFail();
     });
 };
 
