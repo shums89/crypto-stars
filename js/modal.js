@@ -1,7 +1,7 @@
 import { sendData } from './api.js';
-import { getContractors, getUser } from './data.js';
+import { getContractors, updateBalanceContractor } from './contractors.js';
 import { modalBuy, modalSell } from './elems.js';
-import { getUserBalance } from './user.js';
+import { getUser, getUserBalance, updateBalanceUser } from './user.js';
 import { formatNumber, getCashLimit } from './utils.js';
 
 const body = document.querySelector('body');
@@ -14,6 +14,7 @@ let payment;
 let crediting;
 let paymentMethods;
 let pristine;
+let closeModal;
 
 const getPaymentMethods = (data) => {
   paymentMethods.innerHTML = data.paymentMethods
@@ -104,7 +105,7 @@ const showMessageSubmit = (type) => {
 
   setTimeout(() => {
     message.classList.add('visually-hidden');
-  }, 3000);
+  }, 2000);
 };
 
 const onSubmit = (evt) => {
@@ -112,6 +113,10 @@ const onSubmit = (evt) => {
 
   const isValid = pristine.validate();
   const formData = new FormData(evt.target);
+  const changesUser = {
+    'RUB': (contractor.status === 'seller') ? -payment.value : +crediting.value,
+    'KEKS': (contractor.status === 'seller') ? +crediting.value : -payment.value,
+  };
 
   // for (let [key, value] of formData) {
   //   console.log(`${key} — ${value}`)
@@ -121,7 +126,11 @@ const onSubmit = (evt) => {
     sendData(
       () => {
         showMessageSubmit('success');
-        form.reset('');
+        updateBalanceUser(changesUser);
+        updateBalanceContractor(contractor, +crediting.value);
+        setTimeout(() => {
+          closeModal();
+        }, 2000);
       },
       () => showMessageSubmit('error'),
       formData,
@@ -158,19 +167,23 @@ const onChangePaymentMethods = ({ target }) => {
   pristine.validate(paymentMethods);
 };
 
+closeModal = () => {
+  modal.style.display = 'none';
+  body.classList.remove('scroll-lock');
+  pristine.destroy();
+  form.reset();
+
+  exchangeAllBtns.forEach((el) => el.removeEventListener('click', exchangeAll));
+  payment.removeEventListener('input', onChangePayment);
+  crediting.removeEventListener('input', onChangeCrediting);
+  paymentMethods.removeEventListener('change', onChangePaymentMethods);
+  form.removeEventListener('submit', onSubmit);
+  modal.removeEventListener('click', onClose);
+};
+
 const onClose = ({ target }) => {
   if (!target.closest('.modal__content') || target.closest('.modal__close-btn')) {
-    modal.style.display = 'none';
-    body.classList.remove('scroll-lock');
-    pristine.destroy();
-    form.reset();
-
-    exchangeAllBtns.forEach((el) => el.removeEventListener('click', exchangeAll));
-    payment.removeEventListener('input', onChangePayment);
-    crediting.removeEventListener('input', onChangeCrediting);
-    paymentMethods.removeEventListener('change', onChangePaymentMethods);
-    form.removeEventListener('submit', onSubmit);
-    modal.removeEventListener('click', onClose);
+    closeModal();
   }
 };
 

@@ -1,6 +1,14 @@
-import { getUser } from './data.js';
 import { userProfile } from './elems.js';
 import { formatNumber } from './utils.js';
+
+const saveUserData = (data, cb) => {
+  sessionStorage.removeItem('user');
+  sessionStorage.user = JSON.stringify(data);
+
+  cb(JSON.parse(sessionStorage.user));
+};
+
+const getUser = () => JSON.parse(sessionStorage.user);
 
 const getUserBalance = (currency) => {
   const user = getUser();
@@ -20,7 +28,18 @@ const renderUserData = () => {
   nameField.textContent = getUser().userName;
 };
 
+const updateBalanceUser = (changes) => {
+  const user = getUser();
+
+  user.balances.map((el) => { el.amount = +getUserBalance(el.currency) + changes[el.currency]; });
+
+  saveUserData(user, renderUserData);
+};
+
 export {
+  saveUserData,
+  getUser,
   getUserBalance,
   renderUserData,
+  updateBalanceUser,
 };

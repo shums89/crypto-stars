@@ -1,8 +1,8 @@
 import { getData } from './api.js';
 import { renderContainer } from './container.js';
-import { saveContractorsData, saveUserData } from './data.js';
+import { saveContractorsData } from './contractors.js';
 import { containerError, containerUsers, userProfile } from './elems.js';
-import { renderUserData } from './user.js';
+import { renderUserData, saveUserData } from './user.js';
 import { showAlert } from './utils.js';
 
 const mocksBtn = document.querySelector('.btn-mocks');

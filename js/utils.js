@@ -30,9 +30,11 @@ const getCashLimit = (contractor) => {
     ? contractor.balance.amount * contractor.exchangeRate
     : contractor.balance.amount / contractor.exchangeRate;
 
-  return (contractor.status === 'seller')
-    ? `${formatNumber(min)}&nbsp;₽&nbsp;-&nbsp;${formatNumber(max)}&nbsp;₽`
-    : `${formatNumber(min)}&nbsp;KEKS&nbsp;-&nbsp;${formatNumber(max)}&nbsp;KEKS`;
+  const currency = (contractor.status === 'seller') ? '₽' : 'KEKS';
+
+  return (min === max)
+    ? `${formatNumber(min)}&nbsp;${currency}&nbsp;`
+    : `${formatNumber(min)}&nbsp;${currency}&nbsp;-&nbsp;${formatNumber(max)}&nbsp;${currency}`;
 };
 
 export {

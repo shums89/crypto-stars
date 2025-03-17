@@ -1,6 +1,16 @@
+import { renderContainer } from './container.js';
 import { usersList } from './elems.js';
 import { loadModal } from './modal.js';
 import { formatNumber, getCashLimit } from './utils.js';
+
+const saveContractorsData = (data, cb) => {
+  sessionStorage.removeItem('contractors');
+  sessionStorage.contractors = JSON.stringify(data);
+
+  cb(JSON.parse(sessionStorage.contractors));
+};
+
+const getContractors = () => JSON.parse(sessionStorage.contractors);
 
 const createRowElement = (contractor) => {
   const rowElement = document.createElement('tr');
@@ -42,6 +52,21 @@ const renderContractors = (contractors) => {
   contractors.forEach((contractor) => usersList.appendChild(createRowElement(contractor)));
 };
 
+const updateBalanceContractor = (contractor, change) => {
+  const contractors = getContractors();
+  const balance = contractor.balance;
+
+  const result = { balance };
+  result.balance.amount = balance.amount - change;
+
+  Object.assign(contractors.find((el) => el.id === contractor.id), result);
+
+  saveContractorsData(contractors, renderContainer);
+};
+
 export {
+  saveContractorsData,
+  getContractors,
   renderContractors,
+  updateBalanceContractor,
 };

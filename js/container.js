@@ -1,5 +1,4 @@
-import { renderContractors } from './contractors.js';
-import { getContractors } from './data.js';
+import { getContractors, renderContractors } from './contractors.js';
 import { containerMap, containerNoResult, containerUsers, nav } from './elems.js';
 import { clearMap, renderMap } from './map.js';
 
