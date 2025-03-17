@@ -57,7 +57,7 @@ const renderMarkers = (sellers) => {
 
   const createMarker = (seller) => {
     const { lat, lng } = seller.coords;
-    const iconUrl = seller.isVerified ? '../img/pin-verified.svg' : '../img/pin.svg';
+    const iconUrl = seller.isVerified ? './img/pin-verified.svg' : './img/pin.svg';
 
     const icon = L.icon({
       iconUrl: iconUrl,
