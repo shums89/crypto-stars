@@ -167,6 +167,18 @@ const onChangePaymentMethods = ({ target }) => {
   pristine.validate(paymentMethods);
 };
 
+const onEscKeydown = ({ key }) => {
+  if (key === 'Escape') {
+    closeModal();
+  }
+};
+
+const onClose = ({ target }) => {
+  if (!target.closest('.modal__content') || target.closest('.modal__close-btn')) {
+    closeModal();
+  }
+};
+
 closeModal = () => {
   modal.style.display = 'none';
   body.classList.remove('scroll-lock');
@@ -179,12 +191,7 @@ closeModal = () => {
   paymentMethods.removeEventListener('change', onChangePaymentMethods);
   form.removeEventListener('submit', onSubmit);
   modal.removeEventListener('click', onClose);
-};
-
-const onClose = ({ target }) => {
-  if (!target.closest('.modal__content') || target.closest('.modal__close-btn')) {
-    closeModal();
-  }
+  document.removeEventListener('keydown', onEscKeydown);
 };
 
 const renderModal = () => {
@@ -238,6 +245,7 @@ const renderModal = () => {
   paymentMethods.addEventListener('change', onChangePaymentMethods);
   form.addEventListener('submit', onSubmit);
   modal.addEventListener('click', onClose);
+  document.addEventListener('keydown', onEscKeydown);
 };
 
 export const loadModal = (id) => {
