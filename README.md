@@ -2,12 +2,16 @@
 
 [Ссылка на проект](https://shums89.github.io/crypto-stars/)
 
+<img height="240" alt="screenshot" src="https://github.com/user-attachments/assets/109fff50-c901-41d7-96f5-387890b0739f" />
+
 ## Техническое задание
 
 Макет проекта по [ссылке](https://www.figma.com/file/yTpEBKXBLe0ZSkbuYkrYJ4/%D0%93%D1%80%D0%B5%D0%B9%D0%B4%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%3A-JS.-%D0%9F%D1%80%D0%BE%D1%84%D0%B5%D1%81%D1%81%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F-%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0-%D0%B2%D0%B5%D0%B1-%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D1%84%D0%B5%D0%B9%D1%81%D0%BE%D0%B2?type=design&node-id=0%3A1&mode=design&t=yb8558TjHh9PNgxm-1).<br>
-Начальное состояние проекта по [ссылке](/assets/intensives/lite-javascript/2/projects/crypto-stars.zip).<br>
+Начальное состояние проекта по [ссылке](https://up.htmlacademy.ru/assets/intensives/lite-javascript/2/projects/crypto-stars.zip).<br>
 Все необходимые данные загружаются с сервера, сервер доступен по [ссылке](https://cryptostar.grading.htmlacademy.pro/).<br>
 Проект должен соответствовать критериям качества.
+
+
 
 ## Описание проекта
 Криптобиржа **Cryptostar** — сервис покупки криптовалюты KEKS онлайн и за наличный расчёт.
@@ -97,3 +101,9 @@
 ### 5. Дополнительные данные
 
 В файле *index* в комментариях к коду вы можете найти дополнительную информацию по работе с некоторыми темплейтами и стилями.
+
+---
+
+<a href="https://htmlacademy.ru/intensive/javascript"><img align="left" width="50" height="50" alt="HTML Academy" src="https://up.htmlacademy.ru/static/img/intensive/javascript/logo-for-github-2.png"></a>
+
+Репозиторий создан для обучения на интенсивном онлайн‑курсе «[JavaScript. Профессиональная разработка веб-интерфейсов](https://htmlacademy.ru/intensive/javascript)» от [HTML Academy](https://htmlacademy.ru).
